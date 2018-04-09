@@ -14,8 +14,8 @@ import static org.testng.Assert.assertTrue;
 public class FacebookLoginTest {
 
         private WebDriver browser;
-        public static final String LOGIN = "conspiracion@mail.ru";
-        public static final String PASSWORD = "291722a";
+        public static final String LOGIN = "";
+        public static final String PASSWORD = "";
 
 
         @BeforeClass
