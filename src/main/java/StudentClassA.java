@@ -5,6 +5,7 @@ public class StudentClassA {
         private String specialization;
 
 
+
         public StudentClassA ( String name ) {
             this.name = name;
 

@@ -1,15 +1,15 @@
 public class StudentClassC {
-    private int score = 0;
+    private int averageScore = 0;
 
     public int getScore () {
-        return score;
+        return averageScore;
     }
 
     public void setScore(int score) {
         if ( score < 0 ||  score > 5) {
             System.out.println("Не верная оценка");
         } else {
-            this.score = score;
+            this.averageScore = score;
         }
     }
 
