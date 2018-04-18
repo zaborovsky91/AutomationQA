@@ -4,8 +4,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class FacebookLoginWithPageFactoryTest {
-    public static final String LOGIN = "conspiracion@mail.ru";
-    public static final String PASSWORD = "291722a";
+    public static final String LOGIN = "";
+    public static final String PASSWORD = "";
 
     @BeforeClass
     public void browser() {
