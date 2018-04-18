@@ -14,7 +14,7 @@ public class Browser {
         options.addArguments("chrome.switches", "--disable-extensions");
         options.addArguments("--disable-notifications");
         options.addArguments("disable-infobars");
-        System.setProperty("webdriver.chrome.driver", "d:/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "./target/classes/chromedriver.exe");
         options.addArguments("--test-type");
 
         browser = new ChromeDriver(options);
