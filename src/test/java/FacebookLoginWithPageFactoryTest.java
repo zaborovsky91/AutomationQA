@@ -4,8 +4,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class FacebookLoginWithPageFactoryTest {
-    public static final String LOGIN = "";
-    public static final String PASSWORD = "";
+
+    public static final String LOGIN = "conspiracion@mail.ru";
+    public static final String PASSWORD = "291722a";
 
     @BeforeClass
     public void browser() {
@@ -14,7 +15,6 @@ public class FacebookLoginWithPageFactoryTest {
 
     @Test
     public void loginToFacebook() {
-        Browser.openBrowser();
         String textLabelLogout = Navigation.openFacebookMainPage()
                 .enterCreditinalsAndSubmit(LOGIN, PASSWORD)
                 .clickOnNavigationLabelMenu()
