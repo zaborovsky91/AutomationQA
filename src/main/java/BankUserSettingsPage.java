@@ -13,9 +13,9 @@ public class BankUserSettingsPage {
     }
 
     public String getUserLogin (){
-    String textUserLogin = UserLogin.getText();
-    System.out.println(textUserLogin);
-    return (textUserLogin);
+        String textUserLogin = UserLogin.getText();
+        System.out.println(textUserLogin);
+        return (textUserLogin);
 
     }
 
