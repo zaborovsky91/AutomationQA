@@ -36,6 +36,7 @@ public class BankCurrencyPage {
 
     public BankCurrencyPage inputAmmountInDollars () {
         //ammountDollars = getAmmountFromDollarsAccounts();
+
        // fieldAmmountSale.sendKeys()
         //String amountDollarsAccountsInText = dollarAccounts.getText();
        // String numbersAsText = amountDollarsAccountsInText.split(":")[1].split("\\$")[0];
