@@ -6,42 +6,69 @@ import org.openqa.selenium.support.PageFactory;
 public class BankCurrencyPage {
 
     @FindBy(xpath = "//*[@id=\"acc1\"]/option[4]")
-    public WebElement dollarAccounts;
+    public WebElement usdAccounts;
+
+    @FindBy(xpath = "//*[@id=\"acc2\"]/option[2]")
+    public WebElement rubAccounts;
 
     @FindBy (xpath = "//*[@id=\"acc1\"]")
-    public WebElement dropDownMenuAccounts;
+    public WebElement dropDownMenuOutgoingAccounts;
+
+    @FindBy (xpath = "//*[@id=\"acc2\"]")
+    public WebElement dropDownMenuIncommingAccounts;
 
     @FindBy (xpath = "//*[@id=\"from-amount\"]")
     public WebElement fieldAmmountSale;
 
-    public BankCurrencyPage moveDropDownMenuAccounts () {
+    @FindBy (xpath = "//*[@id=\"payment-details\"]/div/textarea")
+    public WebElement paymentDetails;
+
+    @FindBy (id = "forward")
+    public WebElement buttomCalculate;
+
+    public BankCurrencyPage moveDropdownMenuOutgoingAccounts () {
         Actions builder = new Actions(Browser.browser);
-        builder.moveToElement(dropDownMenuAccounts).build().perform();
+        builder.moveToElement(dropDownMenuOutgoingAccounts).build().perform();
         return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
     }
 
-
-    public BankCurrencyPage chooseDollarsAccounts() {
-        dollarAccounts.click();
+    public BankCurrencyPage chooseUsdAccounts() {
+        usdAccounts.click();
         return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
     }
 
-    public double getAmmountFromDollarsAccounts () {
-        String amountDollarsAccountsInText = dollarAccounts.getText();
+    public String getAmountFromDollarsAccounts () {
+        String amountDollarsAccountsInText = usdAccounts.getText();
         String amountDollarsAccountsWithoutText = amountDollarsAccountsInText.split(":")[1].split("\\$")[0];
-        //System.out.println(amountDollarsAccountsWithoutText);
-        //return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
-       return Double.parseDouble(amountDollarsAccountsWithoutText);
+        return (amountDollarsAccountsWithoutText);
     }
 
-    public BankCurrencyPage inputAmmountInDollars () {
-        //ammountDollars = getAmmountFromDollarsAccounts();
-
-       // fieldAmmountSale.sendKeys()
-        //String amountDollarsAccountsInText = dollarAccounts.getText();
-       // String numbersAsText = amountDollarsAccountsInText.split(":")[1].split("\\$")[0];
-        //System.out.println(numbersAsText);
+    public BankCurrencyPage inputAmountInUsd () {
+        String amountInDollars = getAmountFromDollarsAccounts();
+        fieldAmmountSale.sendKeys(amountInDollars);
         return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
+
+    }
+
+    public BankCurrencyPage moveDropdownMenuIncommingAccounts () {
+        Actions builder = new Actions(Browser.browser);
+        builder.moveToElement(dropDownMenuIncommingAccounts).build().perform();
+        return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
+    }
+
+    public BankCurrencyPage chooseRubAccounts() {
+        rubAccounts.click();
+        return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
+    }
+
+    public BankCurrencyPage inputPaymentDetails () {
+        paymentDetails.sendKeys("Перевод на рублевый счет");
+        return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
+    }
+
+    public BankVerifyCurrencyTransferPage clickButtomCalculate () {
+        buttomCalculate.click();
+        return PageFactory.initElements(Browser.browser, BankVerifyCurrencyTransferPage.class);
     }
 
 }
