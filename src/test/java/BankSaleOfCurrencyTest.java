@@ -12,7 +12,7 @@ public class BankSaleOfCurrencyTest {
     }
 
     @Test
-    public void loginToBank() {
+    public void saleOfCurrency() throws InterruptedException {
         String notification = Navigation.openBankLoginPage()
                 .clickLoginButtom()
                 .clickConfirmPhoneButtom()
@@ -38,8 +38,8 @@ public class BankSaleOfCurrencyTest {
 
 
 
-   //@AfterTest
-    //public void closeBrowser() {
-       // Browser.closeBrowser();
-    //}
+   @AfterTest
+    public void closeBrowser() {
+        Browser.closeBrowser();
+    }
 }

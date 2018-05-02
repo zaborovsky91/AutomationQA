@@ -21,6 +21,9 @@ public class BankUserProfilePage {
     @FindBy (xpath = "//*[@id=\"currency-rates\"]")
     public WebElement dropDownMenuCurrency;
 
+    @FindBy (id = "messages-button")
+    public WebElement buttomMessages;
+
     public BankUserProfilePage moveDropdownMenuStatements () {
         Actions builder = new Actions(Browser.browser);
         builder.moveToElement(dropDownMenuStatements).build().perform();
@@ -47,5 +50,10 @@ public class BankUserProfilePage {
     public BankCurrencyPage clickLinkCurrencyPage() {
         linkCurrencyPage.click();
         return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
+    }
+
+    public BankCorrespondencePage clickMessagesButtom() {
+        buttomMessages.click();
+        return PageFactory.initElements(Browser.browser,BankCorrespondencePage.class);
     }
 }

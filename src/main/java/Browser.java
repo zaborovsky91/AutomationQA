@@ -19,7 +19,7 @@ public class Browser {
 
         browser = new ChromeDriver(options);
         browser.manage().window().maximize();
-        browser.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        browser.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     }
 
     public static void closeBrowser() {

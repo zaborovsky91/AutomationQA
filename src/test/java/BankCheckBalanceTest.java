@@ -12,7 +12,7 @@ public class BankCheckBalanceTest {
     }
 
     @Test
-    public void loginToBank() {
+    public void checkBalance() {
         double valueAmmountOutgoingBalance = Navigation.openBankLoginPage()
                 .clickLoginButtom()
                 .clickConfirmPhoneButtom()
@@ -25,8 +25,7 @@ public class BankCheckBalanceTest {
     }
 
 
-
-   @AfterTest
+    @AfterTest
     public void closeBrowser() {
         Browser.closeBrowser();
     }

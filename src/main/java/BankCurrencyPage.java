@@ -37,15 +37,15 @@ public class BankCurrencyPage {
         return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
     }
 
-    public String getAmountFromDollarsAccounts () {
-        String amountDollarsAccountsInText = usdAccounts.getText();
-        String amountDollarsAccountsWithoutText = amountDollarsAccountsInText.split(":")[1].split("\\$")[0];
-        return (amountDollarsAccountsWithoutText);
+    public String getAmountFromUsdAccounts () {
+        String amountUsdAccountsInText = usdAccounts.getText();
+        String amountUsdAccountsWithoutText = amountUsdAccountsInText.split(":")[1].split("\\$")[0];
+        return (amountUsdAccountsWithoutText);
     }
 
     public BankCurrencyPage inputAmountInUsd () {
-        String amountInDollars = getAmountFromDollarsAccounts();
-        fieldAmmountSale.sendKeys(amountInDollars);
+        String amountInUsd = getAmountFromUsdAccounts();
+        fieldAmmountSale.sendKeys(amountInUsd);
         return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
 
     }

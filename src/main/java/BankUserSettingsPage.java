@@ -7,8 +7,13 @@ public class BankUserSettingsPage {
     @FindBy(name = "currentUsername")
     public WebElement UserLogin;
 
-    public BankUserSettingsPage openLinkChangeLogin() {
-        Browser.browser.navigate().to("https://idemo.bspb.ru/auth/settings/username");
+    @FindBy(xpath = "//*[@id=\"settings-container\"]/div[1]/ul/li[4]/a")
+    public WebElement linkChangeUsername;
+
+    public BankUserSettingsPage openLinkChangeLogin() throws InterruptedException {
+        Thread.sleep(1000);
+        linkChangeUsername.click();
+
         return PageFactory.initElements(Browser.browser, BankUserSettingsPage.class);
     }
 

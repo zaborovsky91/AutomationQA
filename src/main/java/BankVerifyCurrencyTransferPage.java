@@ -6,12 +6,12 @@ import java.util.concurrent.TimeUnit;
 
 public class BankVerifyCurrencyTransferPage {
 
-    @FindBy(css = "#confirm")
+    @FindBy(xpath = "//*[@id=\"confirm\"]")
     public WebElement buttomConfirmTransferCurency;
 
 
-    public  BankResultTransferCurrencyPage clickButtomConfirmTransferCurency() {
-        Browser.browser.manage().timeouts();
+    public  BankResultTransferCurrencyPage clickButtomConfirmTransferCurency() throws InterruptedException {
+        Thread.sleep(2000);
         buttomConfirmTransferCurency.click();
         return PageFactory.initElements(Browser.browser,  BankResultTransferCurrencyPage.class);
     }

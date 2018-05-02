@@ -1,4 +1,3 @@
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,7 +10,7 @@ public class BankLoginTest {
     }
 
     @Test
-    public void loginToBank() {
+    public void loginToBank() throws InterruptedException {
         String textUserLogin = Navigation.openBankLoginPage()
                 .clickLoginButtom()
                 .clickConfirmPhoneButtom()
@@ -22,8 +21,8 @@ public class BankLoginTest {
         //Assert.assertTrue(textUserLogin.contains("demo"), "Sign in successful && Login is correct");
     }
 
-    @AfterTest
-    public void closeBrowser() {
-        Browser.closeBrowser();
-    }
+   // @AfterTest
+   // public void closeBrowser() {
+      //  Browser.closeBrowser();
+   // }
 }
