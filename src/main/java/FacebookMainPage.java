@@ -19,7 +19,7 @@ public class FacebookMainPage {
         emailField.sendKeys(login);
         passwordField.sendKeys(pass);
         loginButton.click();
-        return PageFactory.initElements(Browser.browser, FacebookLoginPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), FacebookLoginPage.class);
     }
 
 

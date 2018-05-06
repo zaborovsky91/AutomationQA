@@ -9,51 +9,51 @@ public class BankUserProfilePage {
     @FindBy(xpath = "//*[@id=\"settings-button\"]")
     public WebElement linkUserSettings;
 
-    @FindBy (xpath = "//*[@id=\"statements-statement\"]")
+    @FindBy(xpath = "//*[@id=\"statements-statement\"]")
     public WebElement linkStatementsPage;
 
-    @FindBy (xpath = "//*[@id=\"currency-exchange\"]")
+    @FindBy(xpath = "//*[@id=\"currency-exchange\"]")
     public WebElement linkCurrencyPage;
 
-    @FindBy (xpath = "//*[@id=\"accounts-index\"]")
+    @FindBy(xpath = "//*[@id=\"accounts-index\"]")
     public WebElement dropDownMenuStatements;
 
-    @FindBy (xpath = "//*[@id=\"currency-rates\"]")
+    @FindBy(xpath = "//*[@id=\"currency-rates\"]")
     public WebElement dropDownMenuCurrency;
 
-    @FindBy (id = "messages-button")
+    @FindBy(id = "messages-button")
     public WebElement buttomMessages;
 
-    public BankUserProfilePage moveDropdownMenuStatements () {
-        Actions builder = new Actions(Browser.browser);
+    public BankUserProfilePage moveDropdownMenuStatements() {
+        Actions builder = new Actions(Browser.getBrowser());
         builder.moveToElement(dropDownMenuStatements).build().perform();
-        return PageFactory.initElements(Browser.browser, BankUserProfilePage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankUserProfilePage.class);
     }
 
-    public BankUserProfilePage moveDropdownMenuCurrency () {
-        Actions builder = new Actions(Browser.browser);
+    public BankUserProfilePage moveDropdownMenuCurrency() {
+        Actions builder = new Actions(Browser.getBrowser());
         builder.moveToElement(dropDownMenuCurrency).build().perform();
-        return PageFactory.initElements(Browser.browser, BankUserProfilePage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankUserProfilePage.class);
     }
 
 
     public BankUserSettingsPage clickLinkUserSettings() {
         linkUserSettings.click();
-        return PageFactory.initElements(Browser.browser, BankUserSettingsPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankUserSettingsPage.class);
     }
 
     public BankStatementsPage clickLinkStatementsPage() {
         linkStatementsPage.click();
-        return PageFactory.initElements(Browser.browser, BankStatementsPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankStatementsPage.class);
     }
 
     public BankCurrencyPage clickLinkCurrencyPage() {
         linkCurrencyPage.click();
-        return PageFactory.initElements(Browser.browser, BankCurrencyPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankCurrencyPage.class);
     }
 
     public BankCorrespondencePage clickMessagesButtom() {
         buttomMessages.click();
-        return PageFactory.initElements(Browser.browser,BankCorrespondencePage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankCorrespondencePage.class);
     }
 }

@@ -13,7 +13,7 @@ public class FacebookLoginPage {
 
     public FacebookLoginPage clickOnNavigationLabelMenu() {
         navigationLabelMenu.click();
-        return PageFactory.initElements(Browser.browser, FacebookLoginPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), FacebookLoginPage.class);
     }
 
 

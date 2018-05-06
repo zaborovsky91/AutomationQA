@@ -1,6 +1,6 @@
 import org.openqa.selenium.WebElement;
-        import org.openqa.selenium.support.FindBy;
-        import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class BankLoginPage {
 
@@ -10,7 +10,7 @@ public class BankLoginPage {
 
     public BankConfirmPhoneToLoginPage clickLoginButtom() {
         loginButton.click();
-        return PageFactory.initElements(Browser.browser, BankConfirmPhoneToLoginPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankConfirmPhoneToLoginPage.class);
     }
 
 }

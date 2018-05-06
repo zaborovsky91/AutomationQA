@@ -1,3 +1,4 @@
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -6,7 +7,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Browser {
 
-    public static ChromeDriver browser;
+
+    public static ThreadLocal<WebDriver> browser = new ThreadLocal<>();
+
+    public static WebDriver getBrowser() {
+        return browser.get();
+    }
 
     public static void openBrowser() {
 
@@ -17,13 +23,13 @@ public class Browser {
         System.setProperty("webdriver.chrome.driver", "./target/classes/chromedriver.exe");
         options.addArguments("--test-type");
 
-        browser = new ChromeDriver(options);
-        browser.manage().window().maximize();
-        browser.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        browser.set(new ChromeDriver(options));
+        browser.get().manage().window().maximize();
+        browser.get().manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     }
 
     public static void closeBrowser() {
-        browser.quit();
+        getBrowser().quit();
     }
 
 }

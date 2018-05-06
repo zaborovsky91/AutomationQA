@@ -3,15 +3,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class BankStatementsPage {
-    @FindBy (linkText = "Сегодня")
+    @FindBy(linkText = "Сегодня")
     public WebElement linkPeriod;
 
-    @FindBy (xpath = "//*[@id=\"closing-balance-row\"]/th[2]")
-    public  WebElement ammountOutgoingBalance;
+    @FindBy(xpath = "//*[@id=\"closing-balance-row\"]/th[2]")
+    public WebElement ammountOutgoingBalance;
 
-    public BankStatementsPage clickPeriodLink () {
+    public BankStatementsPage clickPeriodLink() {
         linkPeriod.click();
-        return PageFactory.initElements(Browser.browser, BankStatementsPage.class);
+        return PageFactory.initElements(Browser.getBrowser(), BankStatementsPage.class);
     }
 
     public double getAmmountOutgoingBalance() {

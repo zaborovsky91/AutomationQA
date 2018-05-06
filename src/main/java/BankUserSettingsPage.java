@@ -4,22 +4,26 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BankUserSettingsPage {
 
-    @FindBy(name = "currentUsername")
-    public WebElement UserLogin;
+    @FindBy(xpath = "//*[@id=\"change-username-form\"]/div[1]/div/input")
+    public WebElement userLogin;
 
     @FindBy(xpath = "//*[@id=\"settings-container\"]/div[1]/ul/li[4]/a")
     public WebElement linkChangeUsername;
 
-    public BankUserSettingsPage openLinkChangeLogin() throws InterruptedException {
-        Thread.sleep(1000);
-        linkChangeUsername.click();
+    @FindBy(xpath = "//*[@id=\"contentbar\"]/iframe")
+    public WebElement getIframeFullPage;
 
-        return PageFactory.initElements(Browser.browser, BankUserSettingsPage.class);
+    public BankUserSettingsPage openLinkChangeLogin() {
+        Browser.getBrowser().switchTo().frame(getIframeFullPage);
+        linkChangeUsername.click();
+        Browser.getBrowser().switchTo().defaultContent();
+        return PageFactory.initElements(Browser.getBrowser(), BankUserSettingsPage.class);
     }
 
-    public String getUserLogin (){
-        String textUserLogin = UserLogin.getText();
-        System.out.println(textUserLogin);
+    public String getUserLogin() {
+        Browser.getBrowser().switchTo().frame(getIframeFullPage);
+        String textUserLogin = userLogin.getAttribute("value");
+        Browser.getBrowser().switchTo().defaultContent();
         return (textUserLogin);
 
     }
