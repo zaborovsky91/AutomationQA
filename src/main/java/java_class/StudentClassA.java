@@ -1,3 +1,5 @@
+package java_class;
+
 public class StudentClassA {
         private int age;
         private String name;

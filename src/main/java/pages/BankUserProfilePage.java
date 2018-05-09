@@ -1,3 +1,6 @@
+package pages;
+
+import framework.Browser;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;

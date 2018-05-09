@@ -1,3 +1,5 @@
+package java_class;
+
 public class StudentClassC {
     private int averageScore = 0;
 

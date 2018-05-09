@@ -1,3 +1,5 @@
+package java_class;
+
 public class PrintEventNumbers {
     public static void main (String args [])
     {

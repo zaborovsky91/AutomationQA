@@ -1,4 +1,8 @@
+package framework;
+
 import org.openqa.selenium.support.PageFactory;
+import pages.BankLoginPage;
+import pages.FacebookMainPage;
 
 public class Navigation {
 
@@ -12,8 +16,4 @@ public class Navigation {
         return PageFactory.initElements(Browser.getBrowser(), BankLoginPage.class);
     }
 
-    public static GoogleMainPage openGoogleMainPage() {
-        Browser.getBrowser().get("https://google.com");
-        return PageFactory.initElements(Browser.getBrowser(), GoogleMainPage.class);
-    }
-}
+   }

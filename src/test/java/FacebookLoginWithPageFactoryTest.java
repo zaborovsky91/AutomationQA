@@ -1,3 +1,5 @@
+import framework.Browser;
+import framework.Navigation;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -14,7 +16,34 @@ public class FacebookLoginWithPageFactoryTest {
     }
 
     @Test
-    public void loginToFacebook() {
+    public void loginToFacebook1() {
+        String textLabelLogout = Navigation.openFacebookMainPage()
+                .enterCreditinalsAndSubmit(LOGIN, PASSWORD)
+                .clickOnNavigationLabelMenu()
+                .getLabelLogout();
+        Assert.assertTrue(textLabelLogout.contains("Выйти"), "Sign in successful && Logout is present");
+    }
+
+    @Test
+    public void loginToFacebook2() {
+        String textLabelLogout = Navigation.openFacebookMainPage()
+                .enterCreditinalsAndSubmit(LOGIN, PASSWORD)
+                .clickOnNavigationLabelMenu()
+                .getLabelLogout();
+        Assert.assertTrue(textLabelLogout.contains("Выйти"), "Sign in successful && Logout is present");
+    }
+
+    @Test
+    public void loginToFacebook3() {
+        String textLabelLogout = Navigation.openFacebookMainPage()
+                .enterCreditinalsAndSubmit(LOGIN, PASSWORD)
+                .clickOnNavigationLabelMenu()
+                .getLabelLogout();
+        Assert.assertTrue(textLabelLogout.contains("Выйти"), "Sign in successful && Logout is present");
+    }
+
+    @Test
+    public void loginToFacebook4() {
         String textLabelLogout = Navigation.openFacebookMainPage()
                 .enterCreditinalsAndSubmit(LOGIN, PASSWORD)
                 .clickOnNavigationLabelMenu()
