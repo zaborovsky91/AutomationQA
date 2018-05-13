@@ -1,6 +1,7 @@
 package pages;
 
 import framework.Browser;
+import framework.Utils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,7 +24,8 @@ public class BankNewMessagesPage {
     }
 
     public BankNewMessagesPage inputTextToMessages(String texMessages) throws InterruptedException {
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
+        Utils.waitForElementPresent(textAreaMessages);
         textAreaMessages.sendKeys(texMessages);
         return PageFactory.initElements(Browser.getBrowser(), BankNewMessagesPage.class);
     }

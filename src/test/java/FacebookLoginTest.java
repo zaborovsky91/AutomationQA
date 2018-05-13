@@ -32,7 +32,7 @@ public class FacebookLoginTest {
         browser.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test (groups="test")
     public void testSearch() throws InterruptedException {
         browser.get("https://www.facebook.com/");
         browser.findElement(By.cssSelector("input#email.inputtext")).sendKeys(LOGIN);

@@ -16,14 +16,13 @@ public class Utils {
 
 
     public static boolean waitForElementPresent (WebElement element) {
-        try{
+        try {
             WebDriverWait wait = new WebDriverWait(Browser.getBrowser(), 12);
             wait.until(ExpectedConditions.elementToBeClickable(element));
             return true;
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             return false;
         }
+    }
 }
 
