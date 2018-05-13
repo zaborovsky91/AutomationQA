@@ -24,8 +24,8 @@ public class BankNewMessagesPage {
     }
 
     public BankNewMessagesPage inputTextToMessages(String texMessages) throws InterruptedException {
-        //Thread.sleep(1000);
-        Utils.waitForElementPresent(textAreaMessages);
+        Thread.sleep(1000);
+        //Utils.waitForElementPresent(textAreaMessages);
         textAreaMessages.sendKeys(texMessages);
         return PageFactory.initElements(Browser.getBrowser(), BankNewMessagesPage.class);
     }
