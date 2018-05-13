@@ -3,6 +3,7 @@ import framework.Navigation;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class FacebookLoginWithPageFactoryTest {
@@ -10,7 +11,7 @@ public class FacebookLoginWithPageFactoryTest {
     public static final String LOGIN = "";
     public static final String PASSWORD = "";
 
-    @BeforeClass
+    @BeforeMethod
     public void browser() {
         Browser.openBrowser();
     }

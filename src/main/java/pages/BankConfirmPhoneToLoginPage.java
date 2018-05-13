@@ -16,6 +16,8 @@ public class BankConfirmPhoneToLoginPage {
         return PageFactory.initElements(Browser.getBrowser(), BankUserProfilePage.class);
     }
 
+
+
 }
 
 

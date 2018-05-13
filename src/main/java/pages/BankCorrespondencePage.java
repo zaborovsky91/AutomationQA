@@ -1,6 +1,7 @@
 package pages;
 
 import framework.Browser;
+import framework.Utils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,7 +16,7 @@ public class BankCorrespondencePage {
 
 
     public BankNewMessagesPage clickNewMessages() {
-        buttomNewMessages.click();
+        Utils.clickWithJS(buttomNewMessages);
         return PageFactory.initElements(Browser.getBrowser(), BankNewMessagesPage.class);
     }
 
