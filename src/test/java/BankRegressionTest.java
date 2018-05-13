@@ -23,7 +23,6 @@ public class BankRegressionTest {
     @BeforeClass
     public void browser() {
         Browser.openBrowser();
-        Log.info("Browser opem");
     }
 
     @DataProvider(name = "csv")
@@ -39,7 +38,6 @@ public class BankRegressionTest {
                 .clickLinkUserSettings()
                 .openLinkChangeLogin()
                 .getUserLogin();
-        Log.info("test2");
         assertTrue(userLogin.contains("demo"), "Sign in successful && Login is correct");
     }
 
@@ -100,7 +98,6 @@ public class BankRegressionTest {
     @AfterTest
     public void closeBrowser() {
         Browser.closeBrowser();
-        Log.info("Browser closed");
     }
 }
 
