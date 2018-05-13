@@ -1,0 +1,1 @@
+{"uuid":"80af0c51-c952-4f66-86ce-0f680abca9d2","name":"AutomationQA","start":1526246304666,"stop":1526246321038,"children":["dda3f79f-f7fc-4f27-909a-9cf83bc40b53"],"afters":[{"name":"closeBrowser","status":"passed","stage":"finished","description":"","start":1526246320046,"stop":1526246321037}]}

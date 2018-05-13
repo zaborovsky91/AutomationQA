@@ -6,6 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +18,12 @@ import static org.testng.Assert.assertTrue;
 
 public class BankRegressionTest {
 
+    private static Logger Log = Logger.getLogger(BankRegressionTest.class.getName());
+
     @BeforeClass
     public void browser() {
         Browser.openBrowser();
+        Log.info("Browser opem");
     }
 
     @DataProvider(name = "csv")
@@ -34,6 +39,7 @@ public class BankRegressionTest {
                 .clickLinkUserSettings()
                 .openLinkChangeLogin()
                 .getUserLogin();
+        Log.info("test2");
         assertTrue(userLogin.contains("demo"), "Sign in successful && Login is correct");
     }
 
@@ -94,6 +100,7 @@ public class BankRegressionTest {
     @AfterTest
     public void closeBrowser() {
         Browser.closeBrowser();
+        Log.info("Browser closed");
     }
 }
 

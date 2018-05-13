@@ -1,0 +1,1 @@
+{"uuid":"3b19ff83-3069-4e00-b3b6-e0e2a269b35b","name":"BankRegressionTest","start":1526244720849,"stop":1526244737939,"children":["1eecf58f-405c-4308-9191-09dbd2dc14f1"],"befores":[{"name":"browser","status":"passed","stage":"finished","description":"","start":1526244721094,"stop":1526244728099}]}
