@@ -20,7 +20,7 @@ public class BankRegressionTest {
 
     private static Logger log = Logger.getLogger(BankRegressionTest.class.getName());
 
-    @BeforeMethod
+    @BeforeClass
     public void browser() {
         Browser.openBrowser();
     }
@@ -96,7 +96,7 @@ public class BankRegressionTest {
     }
 
 
-    @AfterMethod
+    @AfterClass
     public void closeBrowser() {
         Browser.closeBrowser();
     }
