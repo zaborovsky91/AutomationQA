@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class Utils {
 
     public static void clickWithJS(WebElement element) {
@@ -13,10 +14,9 @@ public class Utils {
     }
 
 
-   // public static void waitForElementPresent(WebElement element) {
-    //    WebDriverWait wait = new WebDriverWait(Browser.getBrowser(), 2);
-    //        wait.until(ExpectedConditions.elementToBeClickable(element));
-
-    //}
+    public static void waitForElementPresent(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(Browser.getBrowser(), 3);
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
 }
 

@@ -14,7 +14,7 @@ public class BankNewMessagesPage {
     @FindBy(xpath = "//*[@id=\"new-message-form\"]/div[1]/div[1]/div/select/option[6]")
     public WebElement subjectMessage;
 
-    @FindBy(xpath = "//*[@id=\"message-text\"]/div/textarea")
+    @FindBy(css = "#message-text>div >textarea")
     public WebElement textAreaMessages;
 
 
@@ -23,9 +23,8 @@ public class BankNewMessagesPage {
         return PageFactory.initElements(Browser.getBrowser(), BankNewMessagesPage.class);
     }
 
-    public BankNewMessagesPage inputTextToMessages(String texMessages) throws InterruptedException {
-        Thread.sleep(1000);
-        //Utils.waitForElementPresent(textAreaMessages);
+    public BankNewMessagesPage inputTextToMessages(String texMessages) {
+        Utils.waitForElementPresent(textAreaMessages);
         textAreaMessages.sendKeys(texMessages);
         return PageFactory.initElements(Browser.getBrowser(), BankNewMessagesPage.class);
     }
