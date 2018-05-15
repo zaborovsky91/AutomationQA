@@ -10,8 +10,7 @@ public class BankResultTransferCurrencyPage {
 
 
     public String getNotificationConfirmTransferCurrency() {
-        String textNotificationConfirmTransferCurrency = notificationConfirmTransferCurrency.getText();
-        return (textNotificationConfirmTransferCurrency);
+        return notificationConfirmTransferCurrency.getText();
     }
 
 }

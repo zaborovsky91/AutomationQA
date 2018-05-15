@@ -11,7 +11,7 @@ public class BankCorrespondencePage {
     @FindBy(id = "new-message-btn")
     public WebElement buttomNewMessages;
 
-    @FindBy(xpath = "//*[@id=\"messages\"]")
+    @FindBy(id = "messages")
     public WebElement listMessages;
 
 
@@ -21,9 +21,6 @@ public class BankCorrespondencePage {
     }
 
     public String getTextSendMessages() {
-        String textSendMessages = listMessages.getText();
-        return (textSendMessages);
+        return listMessages.getText();
     }
-
-
 }

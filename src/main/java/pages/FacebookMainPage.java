@@ -14,7 +14,7 @@ public class FacebookMainPage {
     @FindBy(css = "input#pass.inputtext")
     public WebElement passwordField;
 
-    @FindBy(xpath = ".//*[contains(@class, 'uiButtonConfirm')]")
+    @FindBy(xpath = "//*[contains(@class, 'uiButtonConfirm')]")
     public WebElement loginButton;
 
 

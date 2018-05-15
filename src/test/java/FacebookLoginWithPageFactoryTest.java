@@ -1,10 +1,7 @@
 import framework.Browser;
 import framework.Navigation;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class FacebookLoginWithPageFactoryTest {
 
@@ -52,7 +49,7 @@ public class FacebookLoginWithPageFactoryTest {
         Assert.assertTrue(textLabelLogout.contains("Выйти"), "Sign in successful && Logout is present");
     }
 
-    @AfterTest
+    @AfterMethod
     public void closeBrowser() {
         Browser.closeBrowser();
     }

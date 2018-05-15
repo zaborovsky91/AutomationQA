@@ -7,12 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BankVerifyCurrencyTransferPage {
 
-    @FindBy(xpath = "//*[@id=\"confirm\"]")
+    @FindBy(id = "confirm")
     public WebElement buttomConfirmTransferCurency;
 
     @FindBy(id = "confirmation-frame")
     public WebElement getIframe;
-
 
     public BankResultTransferCurrencyPage clickButtomConfirmTransferCurency() {
         Browser.getBrowser().switchTo().frame(getIframe);

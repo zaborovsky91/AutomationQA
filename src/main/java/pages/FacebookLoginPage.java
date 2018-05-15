@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FacebookLoginPage {
 
-    @FindBy(xpath = ".//*[@id='userNavigationLabel']")
+    @FindBy(xpath = "//*[@id='userNavigationLabel']")
     public WebElement navigationLabelMenu;
 
-    @FindBy(xpath = ".//div/ul[@class='_54nf']")
+    @FindBy(xpath = "//div/ul[@class='_54nf']")
     public WebElement labelLogout;
 
 
@@ -19,10 +19,8 @@ public class FacebookLoginPage {
         return PageFactory.initElements(Browser.getBrowser(), FacebookLoginPage.class);
     }
 
-
     public String getLabelLogout() {
-        String textLabelLogout = labelLogout.getText();
-        return (textLabelLogout);
+        return labelLogout.getText();
     }
 
 }

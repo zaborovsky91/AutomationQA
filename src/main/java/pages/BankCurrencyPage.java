@@ -8,22 +8,22 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BankCurrencyPage {
 
-    @FindBy(xpath = "//*[@id=\"acc1\"]/option[4]")
+    @FindBy(xpath = "//*[@id='acc1']/option[4]")
     public WebElement usdAccounts;
 
-    @FindBy(xpath = "//*[@id=\"acc2\"]/option[2]")
+    @FindBy(xpath = "//*[@id='acc2']/option[2]")
     public WebElement rubAccounts;
 
-    @FindBy(xpath = "//*[@id=\"acc1\"]")
+    @FindBy(xpath = "//*[@id='acc1']")
     public WebElement dropDownMenuOutgoingAccounts;
 
-    @FindBy(xpath = "//*[@id=\"acc2\"]")
+    @FindBy(xpath = "//*[@id='acc2']")
     public WebElement dropDownMenuIncommingAccounts;
 
-    @FindBy(xpath = "//*[@id=\"from-amount\"]")
+    @FindBy(id = "from-amount")
     public WebElement fieldAmmountSale;
 
-    @FindBy(xpath = "//*[@id=\"payment-details\"]/div/textarea")
+    @FindBy(xpath = "//*[@id='payment-details']/div/textarea")
     public WebElement paymentDetails;
 
     @FindBy(id = "forward")
@@ -42,8 +42,7 @@ public class BankCurrencyPage {
 
     public String getAmountFromUsdAccounts() {
         String amountUsdAccountsInText = usdAccounts.getText();
-        String amountUsdAccountsWithoutText = amountUsdAccountsInText.split(":")[1].split("\\$")[0];
-        return (amountUsdAccountsWithoutText);
+        return amountUsdAccountsInText.split(":")[1].split("\\$")[0];
     }
 
     public BankCurrencyPage inputAmountInUsd() {

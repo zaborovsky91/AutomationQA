@@ -1,0 +1,1 @@
+{"uuid":"088e3d25-23b3-4639-89bd-a71e1e1da298","name":"BankRegressionTest.takeScreenShotOnFailure","description":"","start":1526404047984,"stop":1526404048361,"children":["0948eb00-26e5-423a-8c05-b0d221799964"],"afters":[{"name":"takeScreenShotOnFailure","status":"passed","stage":"finished","description":"","start":1526404047984,"stop":1526404048360}]}

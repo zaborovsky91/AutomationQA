@@ -9,7 +9,7 @@ public class BankStatementsPage {
     @FindBy(linkText = "Сегодня")
     public WebElement linkPeriod;
 
-    @FindBy(xpath = "//*[@id=\"closing-balance-row\"]/th[2]")
+    @FindBy(xpath = "//*[@id='closing-balance-row']/th[2]")
     public WebElement ammountOutgoingBalance;
 
     public BankStatementsPage clickPeriodLink() {

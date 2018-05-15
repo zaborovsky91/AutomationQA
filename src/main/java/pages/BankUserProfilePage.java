@@ -7,27 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class BankUserProfilePage {
+public class BankUserProfilePage extends BankHeaderPage {
 
-    @FindBy(xpath = "//*[@id=\"settings-button\"]")
-    public WebElement linkUserSettings;
-
-    @FindBy(xpath = "//*[@id=\"statements-statement\"]")
-    public WebElement linkStatementsPage;
-
-    @FindBy(xpath = "//*[@id=\"currency-exchange\"]")
-    public WebElement linkCurrencyPage;
-
-    @FindBy(xpath = "//*[@id=\"accounts-index\"]")
-    public WebElement dropDownMenuStatements;
-
-    @FindBy(xpath = "//*[@id=\"currency-rates\"]")
-    public WebElement dropDownMenuCurrency;
-
-    @FindBy(id = "messages-button")
-    public WebElement buttomMessages;
-
-    public BankUserProfilePage moveDropdownMenuStatements() {
+   public BankUserProfilePage moveDropdownMenuStatements() {
         Actions builder = new Actions(Browser.getBrowser());
         builder.moveToElement(dropDownMenuStatements).build().perform();
         return PageFactory.initElements(Browser.getBrowser(), BankUserProfilePage.class);
@@ -38,7 +20,6 @@ public class BankUserProfilePage {
         builder.moveToElement(dropDownMenuCurrency).build().perform();
         return PageFactory.initElements(Browser.getBrowser(), BankUserProfilePage.class);
     }
-
 
     public BankUserSettingsPage clickLinkUserSettings() {
         linkUserSettings.click();
